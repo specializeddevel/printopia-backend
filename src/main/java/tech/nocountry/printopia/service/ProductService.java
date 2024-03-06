@@ -24,12 +24,15 @@ public class ProductService {
     
     @Transactional
     public Product save(Product product) throws Exception{
+        if (product == null) {
+            throw new IllegalArgumentException("Product cannot be null");
+        }
         validate(product);
-        Category category=product.getCategory();
-        Set<Product>products=category.getProducts();
-        products.add(product);
-        category.setProducts(products);
-        categoriService.update(category.getId(), category);
+        //Category category=product.getCategory();
+        //List<Product> products=category.getProducts();
+        //products.add(product);
+        //category.setProducts(products);
+        //categoriService.update(category.getId(), category);
         return productRepository.save(product);
     }
 

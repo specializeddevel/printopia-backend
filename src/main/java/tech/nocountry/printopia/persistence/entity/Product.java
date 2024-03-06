@@ -67,6 +67,7 @@ public class Product {
     @Column(columnDefinition = "DOUBLE(8,2)")
     private Double promotionPrice;
     private Integer stock;
+    @Column(length = 1500)
     private URL photo;
 
     // @JsonBackReference

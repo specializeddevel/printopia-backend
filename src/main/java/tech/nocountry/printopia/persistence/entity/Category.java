@@ -19,6 +19,8 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+
+import java.util.List;
 import java.util.Set;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -58,6 +60,6 @@ public class Category {
     //@JsonManagedReference
     @JsonIgnore
     @OneToMany(mappedBy = "category")
-    private Set<Product> products;
+    private List<Product> products;
 
 }
